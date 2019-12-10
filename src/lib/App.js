@@ -83,7 +83,7 @@ const setCookie = (name, value) => {
  */
 const removeCookies = () => {
     // Clear cookies
-    document.cookie.split(';').forEach(function(c) {
+    document.cookie.split(';').forEach(function (c) {
         document.cookie = c.replace(/^ +/, '').replace(/=.*/, '=;expires=' + new Date().toUTCString() + ';path=/');
     });
 
@@ -129,7 +129,7 @@ const initCookieBar = () => {
     // " To find out more, read our <a style='border-bottom: 1px solid " + cookieBarConfig.color + "; cursor: pointer;'>privacy policy</a> and <a style='border-bottom: 1px solid " + cookieBarConfig.color + "; cursor: pointer;'>cookie policy</a>."
     element.innerHTML = "" +
         "<div style='display: flex;align-items: center;justify-content: space-between;padding: 14px'>" +
-        "<span>" + cookieBarConfig.text  +
+        "<span>" + cookieBarConfig.text +
         "</span>" +
         "<div style='display: flex;align-items: center;'>" +
         "<button id='cookie-confirm' style='border-radius: 0; background: white; color: black;border: none;padding: 6px 16px 6px 16px; cursor: pointer; margin: 0 6px'>" +
@@ -149,13 +149,13 @@ const initCookieBar = () => {
     document.getElementsByTagName('body')[0].appendChild(element);
 
     const confirmButton = document.getElementById('cookie-confirm');
-    confirmButton.addEventListener('click', function() {
+    confirmButton.addEventListener('click', function () {
         setCookie('cookiestatus', 'allow-cookie');
         fadeOut(element, 150);
     });
 
-    const disableButton =  document.getElementById('cookie-disable');
-    disableButton.addEventListener('click', function() {
+    const disableButton = document.getElementById('cookie-disable');
+    disableButton.addEventListener('click', function () {
         var txt = 'Are you sure that you want to disable cookies?';
         var confirm = window.confirm(txt);
         if (confirm === true) {
@@ -195,7 +195,7 @@ export const setupCookieBar = () => {
     // If the user is in EU, then STARTUP
     let checkEurope = new XMLHttpRequest();
     checkEurope.open('GET', 'https://freegeoip.app/json/', true);
-    checkEurope.onreadystatechange = function() {
+    checkEurope.onreadystatechange = function () {
         // Don't process anything else besides finished requests.
         if (checkEurope.readyState !== 4) {
             return;
@@ -232,7 +232,8 @@ export const setupCookieBar = () => {
 
         // Make sure, that checkEurope.onreadystatechange() is not called anymore
         // in order to avoid possible multiple executions of initCookieBar().
-        checkEurope.onreadystatechange = function() {};
+        checkEurope.onreadystatechange = function () {
+        };
 
         // Abort geoip localization.
         checkEurope.abort();
@@ -246,3 +247,10 @@ export const setupCookieBar = () => {
 };
 
 
+class App {
+    constructor() {
+        setupCookieBar();
+    }
+}
+
+export default App;

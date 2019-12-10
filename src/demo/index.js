@@ -1,2 +1,3 @@
-import initCookieBar from './../lib';
-// Load the script only if there is at least a cookie or a localStorage item
+import App from './App';
+
+new App();

@@ -1,7 +1,7 @@
 {
   "name": "@movetodigital/cookie-bar",
   "version": "0.0.2",
-  "description": "Cookie Bar ",
+  "description": "Cookie Bar",
   "main": "build/index.js",
   "scripts": {
     "start": "node scripts/start.js",
