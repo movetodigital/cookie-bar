@@ -1,0 +1,8 @@
+console.log('\x1b[36m%s\x1b[0m', `
+______________________________________\n`);
+
+console.log('\x1b[33m%s\x1b[0m', `We are hiring! More information: https://www.movetodigital.ru/`);
+
+console.log('\x1b[36m%s\x1b[0m', `
+______________________________________
+`);
