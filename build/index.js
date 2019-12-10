@@ -1,6 +1,6 @@
 /*!
  * 
- *   @movetodigital/cookie-bar v0.0.1
+ *   @movetodigital/cookie-bar v0.0.2
  *   https://github.com/movetodigital/cookie-bar.git
  * 
  *   Copyright (c) MoveToDigital
