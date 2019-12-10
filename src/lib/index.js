@@ -1,2 +1,5 @@
 import {setupCookieBar} from './App';
-export default setupCookieBar;
+
+document.addEventListener('DOMContentLoaded', function () {
+    setupCookieBar();
+});
