@@ -1,45 +1,35 @@
-## ⭐️ Features
+## ⭐️ Cookie bar 
 
-- Webpack 4
-- Babel 7
-- Hot Reloading (`npm start`)
-- CSS Autoprefixer
-- SASS/SCSS support
-- UMD exports, so your library works everywhere.
-- Based on [CRA v3.1.1](https://github.com/facebook/create-react-app/releases/tag/v3.1.1) (For Vanilla JS libs or React libs)
-- Jest unit testing
-- `npm run demo` To build a ready-for-deployment demo [(Example)](https://github.com/hodgef/js-library-boilerplate/tree/master/demo)
-- Customizable file headers for your build [(Example 1)](https://github.com/hodgef/js-library-boilerplate/blob/master/build/index.js) [(Example2)](https://github.com/hodgef/js-library-boilerplate/blob/master/build/index.css)
-- Configurable `postinstall` message [(Example)](https://github.com/hodgef/js-library-boilerplate/blob/master/bin/postinstall)
-- Daily [dependabot](https://dependabot.com) dependency updates
-
-## 💎 Customization
-
-> Before shipping, make sure to:
-1. Edit `LICENSE` file
-2. Edit `package.json` information (These will be used to generate the headers for your built files)
-3. Edit `library: "MyLibrary"` with your library's export name in `./config/webpack.config.js`
-4. Edit `./bin/postinstall` (If you would like to display a message on package install)
-
-## 🚀 Deployment
-1. `npm publish`
-2. Your users can include your library as usual
-
-### npm
-```
-import MyLibrary from 'my-library';
-import 'my-library/build/index.css' // If you import a css file in your library
-
-let libraryInstance = new MyLibrary();
-...
+- Add insert script from cdn.jsdelivr.net: 
+```javascript 1.8
+<script src="https://cdn.jsdelivr.net/npm/@movetodigital/cookie-bar@latest/build/index.min.js"/>
 ```
 
-### self-host/cdn
+- [Optional] Declare config object:
+```javascript 1.8
+<script>
+    window.cookieBarConfig = {
+        background: 'rgba(0, 0, 0, 0.74)',
+        color: '#c8c8c8',
+        bottom: 0,
+        width: '100%',
+        fontFamily: 'system-ui',
+        fontSize: '14px',
+        text: 'This website uses cookies, to provide the necessary website functionality and improve your experience. By using this website, you agree to our <a target="_blank" href="/cookie-police" style="border-bottom: 1px solid #c8c8c8; color: #c8c8c8; text-decoration: none; cursor: pointer;">cookie policy.</a>',
+        agreeText: 'ACCEPT',
+        buttonColor: 'white',
+        buttonBackground: 'black',
+        disableText: 'Disable cookies',
+        onDisableButtonClick: () => {
+        },
+    }
+</script>
 ```
-<link href="build/index.css" rel="stylesheet">
-<script src="build/index.js"></script>
 
-let MyLibrary = window.MyLibrary.default;
-let libraryInstance = new MyLibrary();
-...
+- Add initialization script:
+```javascript 1.8
+<script>
+   let CookieBar = window.CookieBar.default;
+   let libraryInstance = new CookieBar();
+</script>
 ```

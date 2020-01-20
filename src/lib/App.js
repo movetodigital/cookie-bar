@@ -96,7 +96,7 @@ const removeCookies = () => {
  * @return null
  */
 const initCookieBar = () => {
-    console.log('init cookie bar');
+    console.log('[cookie-bar] Initialization');
     // If at least a cookie or localstorage is set, then STARTUP
     if (document.cookie.length > 0 || window.localStorage.length > 0) {
         const accepted = getCookie();
@@ -124,6 +124,9 @@ const initCookieBar = () => {
         buttonColor: 'white',
         buttonBackground: 'black',
         disableText: 'Disable cookies',
+        onDisableButtonClick: () => {
+            console.log('[cookie-bar] Please, declare disable function.');
+        },
         ...window.cookieBarConfig,
     };
 
@@ -163,6 +166,7 @@ const initCookieBar = () => {
         if (confirm === true) {
             removeCookies();
             setCookie('cookiestatus', 'disable-cookie');
+            cookieBarConfig.onDisableButtonClick();
             fadeOut(element, 150);
         }
     });
@@ -230,7 +234,7 @@ export const setupCookieBar = () => {
     * If it takes more than 1.5 second, start normally
     */
     let xmlHttpTimeout = setTimeout(function () {
-        console.log('cookieBAR - Timeout for ip geolocation');
+        console.log('[cookie-bar] - Timeout for ip geolocation');
 
         // Make sure, that checkEurope.onreadystatechange() is not called anymore
         // in order to avoid possible multiple executions of initCookieBar().

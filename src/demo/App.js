@@ -4,11 +4,6 @@ class App {
     constructor(){
         let libInstance = new Lib();
         console.log("Lib loaded!", libInstance);
-        this.demoArrowMethod();
-    }
-
-    demoArrowMethod = () => {
-        console.log("Arrow methods will work");
     }
 }
 
