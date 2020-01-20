@@ -137,7 +137,7 @@ const initCookieBar = () => {
         "<span>" + cookieBarConfig.text +
         "</span>" +
         "<div style='display: flex;align-items: center;'>" +
-        " <a id='cookie-disable' style='border-bottom: 1px solid " + cookieBarConfig.color + "; text-decoration: none; cursor: pointer; margin: 0 16px'>" + cookieBarConfig.disableText + "</a>" +
+        " <a id='cookie-disable' style='border-bottom: 1px solid " + cookieBarConfig.color + "; color: " + cookieBarConfig.color + "; text-decoration: none; cursor: pointer; margin: 0 16px'>" + cookieBarConfig.disableText + "</a>" +
         "<button id='cookie-confirm' style='border-radius: 0; background: " + cookieBarConfig.buttonBackground + "; color: " + cookieBarConfig.buttonColor + "; border: none; padding: 8px 20px 8px 20px; cursor: pointer;'>" +
         cookieBarConfig.agreeText +
         "</button>" +
