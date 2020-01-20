@@ -112,30 +112,32 @@ const initCookieBar = () => {
     }
 
     const cookieBarConfig = {
-        background: 'black',
-        color: 'white',
+        background: 'rgba(0, 0, 0, 0.74)',
+        color: '#c8c8c8',
         bottom: 0,
         width: '100%',
         fontFamily: 'system-ui',
-        fontSize: '16px',
-        text: 'We use cookies to improve your experience on our site and to show you personalised advertising.',
-        agreeText: 'I\'m OK with that',
+        fontSize: '14px',
+        text: 'This website uses cookies, to provide the necessary website functionality and improve your experience. By using this website, you agree to our <a target="_blank" href="/cookie-police" style="border-bottom: 1px solid #c8c8c8; color: #c8c8c8; text-decoration: none; cursor: pointer;">cookie policy.</a>',
+        agreeText: 'ACCEPT',
+
+        buttonColor: 'white',
+        buttonBackground: 'black',
         disableText: 'Disable cookies',
         ...window.cookieBarConfig,
     };
 
     var element = document.createElement('div');
 
-    // " To find out more, read our <a style='border-bottom: 1px solid " + cookieBarConfig.color + "; cursor: pointer;'>privacy policy</a> and <a style='border-bottom: 1px solid " + cookieBarConfig.color + "; cursor: pointer;'>cookie policy</a>."
     element.innerHTML = "" +
         "<div style='display: flex;align-items: center;justify-content: space-between;padding: 14px'>" +
         "<span>" + cookieBarConfig.text +
         "</span>" +
         "<div style='display: flex;align-items: center;'>" +
-        "<button id='cookie-confirm' style='border-radius: 0; background: white; color: black;border: none;padding: 6px 16px 6px 16px; cursor: pointer; margin: 0 6px'>" +
+        " <a id='cookie-disable' style='border-bottom: 1px solid " + cookieBarConfig.color + "; text-decoration: none; cursor: pointer; margin: 0 16px'>" + cookieBarConfig.disableText + "</a>" +
+        "<button id='cookie-confirm' style='border-radius: 0; background: " + cookieBarConfig.buttonBackground + "; color: " + cookieBarConfig.buttonColor + "; border: none; padding: 8px 20px 8px 20px; cursor: pointer;'>" +
         cookieBarConfig.agreeText +
         "</button>" +
-        " <a id='cookie-disable' style='border-bottom: 1px solid " + cookieBarConfig.color + "; cursor: pointer;'>" + cookieBarConfig.disableText + "</a>" +
         "</div>" +
         "</div>";
 
