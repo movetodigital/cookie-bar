@@ -118,7 +118,7 @@ const initCookieBar = () => {
         width: '100%',
         fontFamily: 'system-ui',
         fontSize: '14px',
-        text: 'This website uses cookies, to provide the necessary website functionality and improve your experience. By using this website, you agree to our <a target="_blank" href="/cookie-police" style="border-bottom: 1px solid #c8c8c8; color: #c8c8c8; text-decoration: none; cursor: pointer;">cookie policy.</a>',
+        text: 'This website uses cookies, to provide the necessary website functionality and improve your experience. By using this website, you agree to our <a target="_blank" href="/cookie-policy" style="border-bottom: 1px solid #c8c8c8; color: #c8c8c8; text-decoration: none; cursor: pointer;">cookie policy.</a>',
         agreeText: 'ACCEPT',
 
         buttonColor: 'white',
@@ -145,6 +145,7 @@ const initCookieBar = () => {
         "</div>";
 
     element.style.position = 'fixed';
+    element.style.zIndex = '10';
     element.style.background = cookieBarConfig.background;
     element.style.color = cookieBarConfig.color;
     element.style.bottom = cookieBarConfig.bottom;
