@@ -112,6 +112,7 @@ const initCookieBar = () => {
     }
 
     const cookieBarConfig = {
+        zIndex: '10',
         background: 'rgba(0, 0, 0, 0.74)',
         color: '#c8c8c8',
         bottom: 0,
@@ -145,7 +146,7 @@ const initCookieBar = () => {
         "</div>";
 
     element.style.position = 'fixed';
-    element.style.zIndex = '10';
+    element.style.zIndex = cookieBarConfig.zIndex;
     element.style.background = cookieBarConfig.background;
     element.style.color = cookieBarConfig.color;
     element.style.bottom = cookieBarConfig.bottom;
