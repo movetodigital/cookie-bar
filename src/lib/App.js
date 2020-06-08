@@ -112,9 +112,16 @@ const initCookieBar = () => {
     }
 
     const cookieBarConfig = {
+        zIndex: '10',
+        position: 'fixed',
         background: 'rgba(0, 0, 0, 0.74)',
         color: '#c8c8c8',
+        top: 'initial',
+        left: 'initial',
+        right: 'initial',
         bottom: 0,
+        margin: 'initial',
+        padding: 'initial',
         width: '100%',
         fontFamily: 'system-ui',
         fontSize: '14px',
@@ -144,14 +151,19 @@ const initCookieBar = () => {
         "</div>" +
         "</div>";
 
-    element.style.position = 'fixed';
-    element.style.zIndex = '10';
+    element.style.position = cookieBarConfig.position;
+    element.style.zIndex = cookieBarConfig.zIndex;
     element.style.background = cookieBarConfig.background;
     element.style.color = cookieBarConfig.color;
+    element.style.top = cookieBarConfig.top;
+    element.style.left = cookieBarConfig.left;
+    element.style.right = cookieBarConfig.right;
     element.style.bottom = cookieBarConfig.bottom;
     element.style.width = cookieBarConfig.width;
     element.style.fontFamily = cookieBarConfig.fontFamily;
     element.style.fontSize = cookieBarConfig.fontSize;
+    element.style.margin = cookieBarConfig.margin;
+    element.style.padding = cookieBarConfig.padding;
     document.getElementsByTagName('body')[0].appendChild(element);
 
     const confirmButton = document.getElementById('cookie-confirm');
